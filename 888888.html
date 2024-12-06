@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Asmeninis portfolio tinklalapis, sukurtas Robert Stankevic.">
+    <meta name="keywords" content="portfolio, tinklalapis, Robert Stankevic, HTML, CSS">
+    <meta name="author" content="Robert Stankevic">
+    <title>Asmeninis Portfolio</title>
+    <link rel="stylesheet" href="stilius.css">
+    <style>
+        /* Scroll-to-Top mygtuko stilius */
+        #scrollTopButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #scrollTopButton:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Tamsos režimo mygtukas */
+        #theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #theme-toggle:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Šviesos režimo spalvos */
+        :root {
+            --background-color: #ffffff; /* Baltas fonas */
+            --text-color: #000000; /* Juodas tekstas */
+        }
+
+        /* Tamsos režimo spalvos */
+        body.dark {
+            --background-color: #1e1e1e; /* Tamsiai pilkas fonas */
+            --text-color: #ffffff; /* Baltas tekstas */
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Puslapio galva -->
+    <header>
+        <div class="header-text">
+            <h1>Robert Stankevic Portfolio</h1>
+            <p>Sveiki atvykę į mano asmeninį tinklalapį!</p>
+        </div>
+        <hr class="header-line">
+        <img src="789/7897.png" alt="Logotipas" class="logo">
+        <!-- Tamsos režimo mygtukas -->
+        <button id="theme-toggle">Perjungti į tamsos režimą</button>
+    </header>
+
+    <!-- Nuorodų meniu -->
+    <nav class="fixed-nav">
+        <ul>
+            <li><a href="#apie-mane" class="icon-home"></a></li>
+            <li><a href="#projektai" class="icon-projects"></a></li>
+            <li><a href="#paslaugos" class="icon-services"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Pagrindinė turinio dalis -->
+    <main>
+        <section id="apie-mane">
+            <h2>Apie mane</h2>
+            <div class="about-content">
+                <p>Esu inžinierius ir programuotojas, besidomintis naujausiomis technologijomis.</p>
+                <img src="789/f842fdfe-0e98-431a-9b5f-be7fe3e50b2a.webp" alt="Inžinieriaus iliustracija">
+            </div>
+        </section>
+
+        <section id="projektai">
+            <h2>Projektai</h2>
+            <div class="projects-content">
+                <p>Čia galite rasti mano atliktus darbus ir projektus.</p>
+                <img src="789/8b377e4c-445d-4f99-8ecc-14d7a60ebc3f.webp" alt="Projektas 1">
+            </div>
+        </section>
+        <section id="paslaugos">
+            <h2>Paslaugos</h2>
+            <div class="services-content">
+                <p>Čia galite rasti mano siūlomas paslaugas.</p>
+                <img src="789/ba523cb1-0e50-433d-91c9-2d04d6099317.webp" alt="Paslaugų iliustracija">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PIZuDXyPg2E?si=vcnTJHsyf1Q26lPB"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <audio controls>
+                    <source src="789/IĮ ELPolis Elektros paslaugos.mp4" type="audio/mpeg">
+                </audio>
+                <video width="560" height="315" controls>
+                    <source src="789/IĮ ELPolis Elektros paslaugos.mp4" type="video/mp4">
+                    Jūsų naršyklė nepalaiko vaizdo įrašų atkūrimo.
+                </video>
+            </div>
+        </section>
+    </main>
+
+    <!-- Puslapio apačia -->
+    <footer>
+        <p>© 2024 Robert Stankevic. Visos teisės saugomos.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Scroll-to-Top mygtukas -->
+    <button id="scrollTopButton" title="Grįžti į viršų">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll-to-Top funkcionalumas
+        const scrollTopButton = document.getElementById('scrollTopButton');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTopButton.style.display = "block";
+            } else {
+                scrollTopButton.style.display = "none";
+            }
+        };
+
+        scrollTopButton.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+
+        // Tamsos režimo funkcionalumas
+        const themeToggleButton = document.getElementById('theme-toggle');
+
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                themeToggleButton.textContent = 'Perjungti į šviesos režimą';
+            } else {
+                themeToggleButton.textContent = 'Perjungti į tamsos režimą';
+            }
+        });
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+            themeToggleButton.textContent = 'Perjungti į šviesos režimą';
+        }
+    </script>
+</body>
+
+</html>
